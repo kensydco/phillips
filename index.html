@@ -8,414 +8,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Merriweather', serif;
-            color: #1a5276;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: #fff;
-            padding: 15px 40px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Merriweather', serif;
-            font-size: 1.4em;
-            color: #1a5276;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .logo span {
-            color: #28a745;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #1a5276;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(26, 82, 118, 0.9), rgba(40, 167, 69, 0.8)),
-                        url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200') no-repeat center center;
-            background-size: cover;
-            text-align: center;
-            color: #fff;
-            padding: 180px 20px 100px;
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 1.25em;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: #28a745;
-            color: #fff;
-            padding: 16px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1em;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
-        }
-
-        .button:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5);
-        }
-
-        /* Sections */
-        .section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .section-full {
-            padding: 80px 20px;
-            max-width: 100%;
-        }
-
-        .section-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .section.alt, .section-full.alt {
-            background-color: #f8f9fa;
-        }
-
-        .section h2 {
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .section h3 {
-            font-size: 1.6em;
-            margin-bottom: 20px;
-        }
-
-        /* Why Choose Us */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .feature-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h4 {
-            color: #1a5276;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .service-item {
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #28a745;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
-        }
-
-        .service-item h4 {
-            color: #1a5276;
-            margin-bottom: 10px;
-        }
-
-        /* Team */
-        .team-member {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            align-items: flex-start;
-        }
-
-        .team-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-            border: 4px solid #28a745;
-        }
-
-        .team-info h4 {
-            color: #1a5276;
-            font-size: 1.3em;
-            margin-bottom: 5px;
-        }
-
-        .team-info .title {
-            color: #28a745;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        /* Wound Care Section */
-        .wound-care-highlight {
-            background: linear-gradient(135deg, #1a5276, #2874a6);
-            color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px 0;
-        }
-
-        .wound-care-highlight h3 {
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .wound-care-highlight em {
-            display: block;
-            font-style: italic;
-            border-left: 3px solid #28a745;
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-
-        .wound-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .wound-services li {
-            list-style: none;
-            padding: 12px 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 5px;
-        }
-
-        .wound-services li::before {
-            content: "✓ ";
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 40px;
-        }
-
-        .contact-info-box {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .contact-info-box h3 {
-            margin-bottom: 25px;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-detail .icon {
-            font-size: 1.5em;
-            margin-right: 15px;
-            color: #28a745;
-        }
-
-        .contact-form {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .contact-form h3 {
-            margin-bottom: 25px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #28a745;
-        }
-
-        .contact-form button {
-            background-color: #28a745;
-            color: #fff;
-            padding: 14px 40px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .contact-form button:hover {
-            background-color: #218838;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a5276;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.8;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            .team-member {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Phillips Family <span>Healthcare</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#wound-care">Wound Care</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <a href="index.html" class="logo">Phillips Family <span>Healthcare</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="wound-care.html">Wound Care</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
         <h1>Welcome to Phillips Family Healthcare</h1>
         <p>Your family's health is our priority. We provide compassionate primary care for all ages, from pediatrics to seniors, with a focus on personalized service and a warm, welcoming experience.</p>
-        <a href="#contact" class="button">Schedule An Appointment</a>
+        <a href="contact.html" class="button">Schedule An Appointment</a>
     </section>
 
     <!-- Introduction -->
@@ -452,171 +67,71 @@
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="section">
+    <!-- Services Preview -->
+    <section class="section">
         <h2>Our Services</h2>
-        <p style="text-align: center; margin-bottom: 20px;">We offer a wide range of primary and specialized healthcare services to meet your needs:</p>
+        <p class="text-center mb-20">We offer a wide range of primary and specialized healthcare services to meet your needs.</p>
         <div class="services-grid">
             <div class="service-item">
                 <h4>Primary Care & Wellness</h4>
                 <p>Routine check-ups, physicals, and preventive care to keep your family healthy.</p>
             </div>
             <div class="service-item">
-                <h4>Women's Health</h4>
-                <p>Women's wellness exams, screenings, and reproductive health services for every stage of life.</p>
-            </div>
-            <div class="service-item">
                 <h4>Pediatric Care</h4>
-                <p>Well-child visits, immunizations, sports physicals, and care for common childhood illnesses.</p>
+                <p>Well-child visits, immunizations, and care for common childhood illnesses.</p>
             </div>
             <div class="service-item">
                 <h4>Chronic Disease Management</h4>
-                <p>Ongoing management of conditions like diabetes, hypertension, and high cholesterol with a personalized approach.</p>
-            </div>
-            <div class="service-item">
-                <h4>Weight Management</h4>
-                <p>Guidance and support for healthy weight loss or maintenance, tailored to your goals.</p>
-            </div>
-            <div class="service-item">
-                <h4>Lab & Diagnostic Testing</h4>
-                <p>Convenient on-site blood work and basic diagnostic tests for timely results.</p>
+                <p>Ongoing management of conditions like diabetes, hypertension, and high cholesterol.</p>
             </div>
         </div>
+        <p class="text-center mt-40"><a href="services.html" class="button">View All Services</a></p>
     </section>
 
-    <!-- Meet the Team -->
-    <section id="team" class="section-full alt">
-        <div class="section-inner">
-            <h2>Meet Our Team</h2>
-            <p style="text-align: center; margin-bottom: 40px;">Our friendly and professional team is dedicated to your family's health and well-being.</p>
-
-            <div class="team-member">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop" alt="Teddy Phillips, FNP-BC" class="team-photo">
-                <div class="team-info">
-                    <h4>Teddy Phillips, FNP-BC</h4>
-                    <p class="title">Family Nurse Practitioner & Founder</p>
-                    <p>Ted Phillips is a board-certified Family Nurse Practitioner and the founder of Phillips Family Healthcare. He specializes in comprehensive family medicine, managing everything from routine wellness visits to chronic conditions. Patients appreciate Ted's compassionate approach and the time he takes to listen to their concerns, ensuring personalized care for each individual.</p>
-                </div>
-            </div>
-
-            <p style="text-align: center; margin-top: 30px;">Phillips Family Healthcare also partners with <strong>Precision Wound Management</strong>, a specialized wound care team led by Dr. April Carter, MD, to provide advanced wound care services on-site.</p>
-        </div>
-    </section>
-
-    <!-- Wound Care Section -->
-    <section id="wound-care" class="section">
-        <h2>Precision Wound Management</h2>
-
-        <div class="wound-care-highlight">
-            <h3>Advanced Wound Care, Right at Our Clinic</h3>
-            <p>Phillips Family Healthcare is proud to offer specialized wound care through our in-house Precision Wound Management program. This physician-led team provides expert, evidence-based treatment for acute and chronic wounds, helping patients heal faster while staying close to home.</p>
-            <em>"Precision Wound Management is dedicated to providing expert, evidence-based care for acute and chronic wounds. Our mission is to accelerate healing, reduce complications, and restore quality of life through precise clinical intervention and compassionate service."</em>
-        </div>
-
-        <div class="team-member">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop" alt="Dr. April Carter" class="team-photo">
-            <div class="team-info">
-                <h4>Dr. April Carter, MD, MHA, FACP</h4>
-                <p class="title">Medical Director of Precision Wound Management</p>
-                <p>Dr. Carter brings a wealth of experience in internal medicine and leads our wound care program with a commitment to the highest standards of care. She provides clinical oversight and develops evidence-based treatment protocols for complex wound cases.</p>
-            </div>
-        </div>
-
-        <div class="team-member">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=150&h=150&fit=crop" alt="Aldridge Westrich, APRN" class="team-photo">
-            <div class="team-info">
-                <h4>Aldridge Westrich, APRN</h4>
-                <p class="title">Nurse Practitioner, Wound Care Specialist</p>
-                <p>Aldridge works closely with Dr. Carter to deliver hands-on treatment and education to patients. He has extensive experience in wound assessment and management, ensuring patients receive compassionate, effective care at each visit.</p>
-            </div>
-        </div>
-
-        <h3 style="margin-top: 40px;">Wound Care Services Include:</h3>
-        <ul class="wound-services">
-            <li>Advanced wound assessment and monitoring</li>
-            <li>Debridement and specialized dressings</li>
-            <li>Infection management and antibiotic therapy coordination</li>
-            <li>Personalized wound care education for patients and caregivers</li>
-            <li>Collaboration with primary providers and specialists</li>
-        </ul>
-
-        <p style="margin-top: 30px; text-align: center; font-size: 1.1em;"><strong>Wound Care Hours:</strong> Monday–Friday, 10:00 AM – 5:00 PM | Call <strong>(870) 559-4252</strong> for appointments</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-full alt">
-        <div class="section-inner">
-            <h2>Contact & Appointments</h2>
-
-            <div class="contact-grid">
-                <div class="contact-info-box">
-                    <h3>Get in Touch</h3>
-
-                    <div class="contact-detail">
-                        <span class="icon">📍</span>
-                        <div>
-                            <strong>Address</strong><br>
-                            2921 State Highway 77 S, Suite 12-13<br>
-                            Marion, AR 72364
-                        </div>
-                    </div>
-
-                    <div class="contact-detail">
-                        <span class="icon">📞</span>
-                        <div>
-                            <strong>Phone</strong><br>
-                            (870) 559-4252
-                        </div>
-                    </div>
-
-                    <div class="contact-detail">
-                        <span class="icon">📠</span>
-                        <div>
-                            <strong>Fax</strong><br>
-                            (870) 559-4253
-                        </div>
-                    </div>
-
-                    <div class="contact-detail">
-                        <span class="icon">🕐</span>
-                        <div>
-                            <strong>Clinic Hours</strong><br>
-                            Monday – Friday, 8:00 AM – 5:00 PM<br>
-                            <em>(Walk-ins welcome)</em>
-                        </div>
-                    </div>
-
-                    <div class="contact-detail">
-                        <span class="icon">🩹</span>
-                        <div>
-                            <strong>Wound Care Hours</strong><br>
-                            Monday – Friday, 10:00 AM – 5:00 PM<br>
-                            <em>(By appointment)</em>
-                        </div>
-                    </div>
-
-                    <p style="margin-top: 20px;"><strong>Stay Connected:</strong> Follow us on Facebook for clinic updates and health tips.</p>
-                </div>
-
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <p style="margin-bottom: 20px;">Have a non-urgent question? Send us a message and we'll get back to you as soon as possible.</p>
-                    <form>
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="tel" name="phone" placeholder="Your Phone Number">
-                        <textarea name="message" rows="4" placeholder="Your Message"></textarea>
-                        <button type="submit">Submit Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Schedule Your Visit?</h2>
+        <p>Walk-ins are welcome, or call us to schedule an appointment that fits your schedule.</p>
+        <a href="contact.html" class="button button-outline">Contact Us Today</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Phillips Family Healthcare. All rights reserved.</p>
-        <p>2921 State Highway 77 S, Suite 12-13, Marion, AR 72364 | (870) 559-4252</p>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Phillips Family Healthcare</h4>
+                <p>Compassionate primary care for all ages in Marion, Arkansas.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="services.html">Our Services</a>
+                <a href="team.html">Meet Our Team</a>
+                <a href="wound-care.html">Wound Care</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>2921 State Highway 77 S, Suite 12-13</p>
+                <p>Marion, AR 72364</p>
+                <p>Phone: (870) 559-4252</p>
+                <p>Fax: (870) 559-4253</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Monday - Friday</p>
+                <p>8:00 AM - 5:00 PM</p>
+                <p>Walk-ins Welcome</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Phillips Family Healthcare. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
