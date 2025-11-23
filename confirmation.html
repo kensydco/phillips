@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Phillips Family Healthcare</title>
+    <meta name="description" content="Thank you for contacting Phillips Family Healthcare. We'll get back to you as soon as possible.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Phillips Family <span>Healthcare</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="wound-care.html">Wound Care</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:8705594252" class="nav-phone-btn">📞 (870) 559-4252</a></li>
+                <li><a href="contact.html" class="nav-appointment-btn">Book Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-small">
+        <h1>Thank You!</h1>
+        <p>Your message has been received</p>
+    </section>
+
+    <!-- Confirmation Message -->
+    <section class="section">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <div style="font-size: 4em; margin-bottom: 20px;">✓</div>
+            <h2>We've Received Your Message</h2>
+            <p style="font-size: 1.1em; margin: 30px 0;">Thank you for contacting Phillips Family Healthcare. We appreciate you reaching out to us.</p>
+            <p style="font-size: 1.1em; margin: 30px 0;">Someone from our team will contact you as soon as possible to address your inquiry.</p>
+
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; margin: 40px 0;">
+                <h3>What's Next?</h3>
+                <p style="margin-top: 15px;">A member of our staff will review your message and respond during our normal business hours:</p>
+                <p style="margin-top: 15px;"><strong>Monday - Friday, 8:00 AM - 5:00 PM</strong></p>
+            </div>
+
+            <p style="margin: 30px 0; color: #666;">If you have an urgent medical need, please call our office directly at <a href="tel:8705594252" style="color: #2c5f7c; font-weight: 600;">(870) 559-4252</a> or visit the nearest emergency room.</p>
+
+            <div style="margin-top: 40px;">
+                <a href="index.html" class="button">Return to Home</a>
+                <a href="contact.html" class="button" style="margin-left: 15px; background: #6c757d;">Contact Us Again</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Phillips Family Healthcare</h4>
+                <p>Compassionate primary care for all ages in Marion, Arkansas.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/phillipsfamilyhealthcare" target="_blank" aria-label="Facebook">📘</a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">📷</a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="services.html">Our Services</a>
+                <a href="team.html">Meet Our Team</a>
+                <a href="wound-care.html">Wound Care</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>2921 State Highway 77 S, Suite 12-13</p>
+                <p>Marion, AR 72364</p>
+                <p>Phone: <a href="tel:8705594252" style="color: rgba(255,255,255,0.9);">(870) 559-4252</a></p>
+                <p>Fax: (870) 559-4253</p>
+                <p>Email: <a href="mailto:info@pfhealth.net" style="color: rgba(255,255,255,0.9);">info@pfhealth.net</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Clinic: Mon-Fri, 8AM-5PM</p>
+                <p>Wound Care: Mon-Fri, 10AM-5PM</p>
+                <p>Walk-ins Welcome (Clinic)</p>
+                <p style="margin-top: 15px;"><a href="contact.html" class="button" style="display: inline-block; padding: 12px 28px; font-size: 0.95em;">Book Appointment</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Phillips Family Healthcare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
